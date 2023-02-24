@@ -1,4 +1,3 @@
-import time
 
 from .base_page import BasePage
 from .locators import ProductPageLocators
@@ -16,7 +15,7 @@ class ProductPage(BasePage):
         add_btn = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BTN)
         add_btn.click()
         self.solve_quiz_and_get_code()
-        time.sleep(10)
+        # time.sleep(10)
         success_msg = self.browser.find_element(*ProductPageLocators.SUCCESS_ADDED_MSG).text
         print(success_msg)
         basket_price_msg = self.browser.find_element(*ProductPageLocators.BASKET_PRICE_MSG).text

@@ -24,6 +24,7 @@ def browser(request):
         chrome_options = ChOptions()
         chrome_options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
         browser = webdriver.Chrome(options=chrome_options)
+        browser.implicitly_wait(10)
     elif browser_name == "firefox":
         print("\nstart firefox browser for test..")
 
