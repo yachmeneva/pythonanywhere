@@ -20,7 +20,7 @@ class BasePage():
         login_link.click()
 
     def should_be_login_link(self):
-        #self.browser.find_element(By.CSS_SELECTOR, "#login_link_invalid")
+        # self.browser.find_element(By.CSS_SELECTOR, "#login_link_invalid")
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented."
 
     def is_element_present(self, how, what):
@@ -61,3 +61,7 @@ class BasePage():
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
+
+    def go_to_basket_page(self):
+        basket_link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
+        basket_link.click()
